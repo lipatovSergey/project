@@ -1,1 +1,3 @@
-function worker() {}
+function worker() {
+    console.log('HI')
+}
