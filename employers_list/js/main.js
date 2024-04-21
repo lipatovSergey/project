@@ -6,6 +6,8 @@ const workers = [
   new Worker('Иван', 'Иванов', 'Иваныч', 2011, new Date(1987, 1, 23), 'Рабочий')
 ]
 
+// ghb
+
 const $workersList = document.getElementById("workersList");
 
 function newWorkerTR(worker) {
