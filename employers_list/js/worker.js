@@ -9,7 +9,7 @@ export default class Worker {
     this.post = post
   }
 
-  // Функция для получения ФИО сотрудника
+ 
 
   getFIO() {
     return this.surname + ' ' + this.name + ' ' + this.lastname;
