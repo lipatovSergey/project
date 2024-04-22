@@ -12,12 +12,35 @@
   <section class="main">
     <div class="container">
       <h1>Сотрудники</h1>
+
+      <form action="" id="add-worker">
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Имя" id="input-name">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Фамилия" id="input-surname">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Отчество" id="input-lastname">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="number" placeholder="Начало работы" id="input-workStart">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="date" placeholder="Имя" id="input-birtDate">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Должность" id="input-post">
+        </div>
+        <button class="btn btn-primary mb-3">Добавить</button>
+      </form>
+
       <table class="workersTable table table-striped">
         <thead class="thead-dark">
-          <th>ФИО</th>
-          <th>Дата рождения</th>
-          <th>Время работы</th>
-          <th>Должность</th>
+          <th data-column="fio">ФИО</th>
+          <th data-column="birthDate">Дата рождения</th>
+          <th data-column="workStart">Время работы</th>
+          <th data-column="post">Должность</th>
         </thead>
         <tbody id="workersList"></tbody>
       </table>
