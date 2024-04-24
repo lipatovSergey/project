@@ -22,6 +22,8 @@ export default class Student {
 
         if (mm < 10) mm = 0 + mm;
         if (dd < 10) dd = 0 + dd;
+
+        return `${dd}.${mm}.${yyyy}`;
     }
 
     // Функция для получения возраста 
@@ -29,21 +31,25 @@ export default class Student {
         const today = new Date;
         let age = today.getFullYear() - this.birthDate.getFullYear();
         let month = today.getMonth() - this.birthDate.getMonth();
-        if (month < 0 || (m === 0 && today.getDate() < this.birthDate.getDate())) {
+        if (month < 0 || (month === 0 && today.getDate() < this.birthDate.getDate())) {
             age--;
         }
         return age;
     }
 
     // Функция для получения срока учёбы
-    getstudyTime() {
-        const currentYear = new Date.getFullYear();
-        const currentMonth = new Date.getMonth() + 1; // month start at 0!
-        let graduationYear = this.studyingStart + 4;
+    getStudyTime() {
+        const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth() + 1; // month start at 0!
+
+        let studyingStart = parseInt(this.studyingStart); // convert to number
+        let graduationYear = studyingStart + 4;
+        let course = currentYear - studyingStart;
         
-        if (currentYear > graduationYear || currentYear === graduationYear && currentMonth > 8 || currentYear - this.studyingStart > 4) {
-            return `${this.studyingStart} - ${graduationYear}`
+        if (currentYear > graduationYear || (currentYear === graduationYear && currentMonth > 8) || course > 4) {
+            return `${studyingStart} - ${graduationYear} (закончил)`;
+        } else {
+            return `${studyingStart} - ${currentYear} (${course} курс)`;
         }
     }
-
 }
