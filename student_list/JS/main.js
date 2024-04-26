@@ -48,17 +48,9 @@ function getSortStudents(prop, dir) {
     const studentsCopy = [...students];
     const sortedStudents = studentsCopy.sort(function(studentA, studentB) {
         if (dir) {
-            if (studentA[prop] > studentB[prop]) {
-                return 1;
-            } else {
-                return -1;
-            }
+            return studentA[prop] > studentB[prop] ? 1 : -1;
         } else {
-            if (studentA[prop] < studentB[prop]) {
-                return 1;
-            } else {
-                return -1;
-            }
+            return studentB[prop] > studentA[prop] ? 1 : -1;
         }
     })
     return sortedStudents;
@@ -133,23 +125,30 @@ return valid;
 }
 
 
-// Функция поиска
+// Функция фильтрации
 function getStudentsFiltred() {
     
     const studentsCopy = [...students];
 
     const searchFio = document.getElementById('filter-fio').value.trim().toLowerCase();
     const searchFaculty = document.getElementById('filter-faculty').value.trim().toLowerCase();
+
     const searchStudyingStart = document.getElementById('filter-study_start').value;
     const searchStudyingEnd = document.getElementById('filter-study_end').value;
     
+    // Перед ParseInt следует выполнять проверку чтобы избежать неправильного поведения
+    const studyStart = searchStudyingStart.trim() !== '' ? parseInt(searchStudyingStart) : NaN;
+    const studyEnd = searchStudyingEnd.trim() !== '' ? parseInt(searchStudyingEnd) : NaN;
+    
     for (const student of studentsCopy) {
+        // это получилось очень удобно таким образом в отфильтрованных по нынешнему году студентов не попадут те кто не заканчмвает обучение в текущем году
+        // ведь если студент на втором курсе то в  таблице второе число будет указано как настоящий год 2023 - 2024 (1 курс)
         const graduationYear = parseInt(student.studyingStart) + 4;
         
         const nameMatch = searchFio !== '' && student.fio.toLowerCase().includes(searchFio);
         const facultyMatch = searchFaculty !== '' && student.faculty.toLowerCase().includes(searchFaculty);
-        const studyStartMatch = parseInt(student.studyingStart) === parseInt(searchStudyingStart) ? true : false;
-        const studyEndMatch = graduationYear === parseInt(searchStudyingEnd) ? true : false;
+        const studyStartMatch = parseInt(student.studyingStart) === studyStart;
+        const studyEndMatch = graduationYear === studyEnd;
         
         
         if (!nameMatch && !facultyMatch && !studyStartMatch && !studyEndMatch) {
