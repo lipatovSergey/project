@@ -7,6 +7,7 @@ export default class Student {
         this.birthDate = birthDate;
         this.studyingStart = studyingStart;
         this.faculty = faculty;
+        this.isVisible = true;
     }
 
     // Функция для получения ФИО
@@ -48,6 +49,7 @@ export default class Student {
         
         if (currentYear > graduationYear || (currentYear === graduationYear && currentMonth > 8) || course > 4) {
             return `${studyingStart} - ${graduationYear} (закончил)`;
+            
         } else {
             return `${studyingStart} - ${currentYear} (${course} курс)`;
         }
