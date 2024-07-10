@@ -1,0 +1,18 @@
+npm init 
+npm i -D webpack webpack-cli // устанавливаем сразу в DevDependencies
+создаём в корне проекта webpack.config.js
+module.exports = {
+    entry: './src/index.js', // путь до файла от которого начинается сборка (html не работает в качестве точки входа в webpack)
+    output: {
+        filename: 'main.js' // Файл в котором приложение соберётся
+    },
+};
+
+Этот файл в котором приложение соберётся 'main.js' нужно вставить в src index.html
+Для single page приложкений путь до файла должен быть абсолютным. То есть без точки вначале 
+type ="module" не нужно указывать. webpack сам собирает модули, по своим правилам
+
+В package.json указать в "scripts"
+"build": "webpack
+
+Для запуска приложения из папки с index.html вызвать команду serve -s (-s это для singe page)
