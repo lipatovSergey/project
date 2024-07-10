@@ -1,0 +1,21 @@
+{
+  "name": "module7",
+  "description": "Products catalog",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Sergey",
+  "dependencies": {
+    "navigo": "^8.11.1",
+    "parcel": "^2.12.0",
+    "redom": "^4.1.5"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
