@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Parcel-bundler cache
+.cache/
+dist/
+
+# Directories for temporary files
+tmp/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore the main built files
+src/styles/*.css.map
+
+# Ignore environmental variables file
+.env
