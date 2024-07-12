@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F-food</title>
     <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script defer type="module" src="./JS/index.js"></script>
 </head>
 <body>
     <h1 class="visually-hidden">F-food fastest food delievery in the country</h1>
     <header class="header">
         <div class="header__container container">
             <a class="header__logo">
-                <img class="header__logo-image" src="./img/main-logo.png" alt="Testbite logo">
+                <img class="header__logo-image" src="./static/img/main-logo.png" alt="Testbite logo">
             </a>
             <nav class="header__navigation" tabindex="1">
                 <ul class="header__menu reset-list">
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Popular</a>
+                        <a href="#" class="header__menu-link" data-category="popular">Popular</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Main dishes</a>
+                        <a href="#" class="header__menu-link" data-category="main_dishes">Main dishes</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Drinks</a>
+                        <a href="#" class="header__menu-link" data-category="drinks">Drinks</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Sweets</a>
+                        <a href="#" class="header__menu-link" data-category="sweets">Sweets</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Pasta</a>
+                        <a href="#" class="header__menu-link" data-category="pasta">Pasta</a>
                     </li>
                 </ul>
             </nav>
@@ -42,12 +43,35 @@
         </div>
     </header>
     <main class="main">
-        <h2 class="main__title">
-            <p class="main__title-descr"></p>
-        </h2>
-        <ul class="main__menu">
-            
-        </ul>
+        <div class="main__container container">
+        <h2 class="main__title"></h2>
+        <p class="main__title-descr"></p>
+        <ul class="main__menu reset-list"></ul>
+        </div>
     </main>
+    <div id="modal" class="modal">
+        <div class="modal__content">
+            <button class="modal__close-button reset-btn" id="close-button">&times;</button>
+            <div class="three-d-container" id="3d-container" style="width: 100%; height: 100%;"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__wrapper">
+                <a href="" class="footer__link">
+                    <img src="./static/img/facebook.svg">
+                </a>
+                <a href="" class="footer__link">
+                    <img src="./static/img/instagram.svg">
+                </a>
+                <a href="" class="footer__link">
+                    <img src="./static/img/twitter.svg">
+                </a>
+                <a href="" class="footer__link">
+                    <img src="./static/img/youtube.svg">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

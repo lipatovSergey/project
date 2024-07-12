@@ -1,0 +1,78 @@
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal__content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+    max-height: 80vh;
+    /* Ограничение высоты окна */
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    display: flex;
+    /* Flexbox для центрирования содержимого */
+    flex-direction: column;
+}
+
+.modal.show .modal__content {
+    transform: translateY(0);
+}
+
+.three-d-container {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    /* Контейнер растет внутри flexbox */
+    overflow: hidden;
+    /* Убираем скроллинг внутри контейнера */
+    position: relative;
+    /* Для абсолютного позиционирования canvas */
+}
+
+.three-d-container canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* Абсолютное позиционирование для canvas */
+}
+
+.modal__close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    /* Выравнивание кнопки закрытия */
+}
+
+.modal__close-button:hover,
+.modal__close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

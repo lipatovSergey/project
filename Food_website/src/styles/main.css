@@ -1,6 +1,133 @@
-@import url(./fonts.css);
-@import url(./variables.css);
-@import url(./global.css);
-@import url(./header.css);
-@import url(./content.css);
-@import url(./footer.css)
+.main__container {
+    padding: 0 50px;
+    padding-bottom: 50px;
+}
+
+.main__title {
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 58px;
+    font-size: 48px;
+    font-weight: var(--regular);
+}
+
+.main__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Центрирование элементов по горизонтали */
+    gap: 30px;
+    align-items: center;
+}
+
+.main__item {
+    display: flex;
+    width: calc(100% / 2 - 30px);
+    height: 200px;
+    min-width: 500px;
+    overflow: hidden;
+    /* Чтобы содержимое не выходило за границы элемента */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+    border-radius: 15px;
+}
+
+.main__item:hover {
+    transform: scale(1.01);
+}
+
+.main__item:active {
+    background-color: rgb(206, 199, 199);
+}
+
+.main__item-link {
+    display: block;
+}
+
+.main__item-img {
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+        /* Сохраняет пропорции изображения */
+    object-position: center;
+    float: left;
+    /* Изображение будет слева */
+}
+
+.main__item-information {
+    overflow: hidden;
+    padding: 30px 15px;
+}
+
+.main__item-title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.main__item-descr {
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: var(--page-lh);
+    font-size: var(--default-fs);
+}
+
+.main__item-price {
+    margin: 0;
+    color: var(--orange-dark);
+}
+
+@media (max-width: 1280px) {
+    .main__item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 962px) {
+    .main__container {
+        padding: 0 15px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 769px) {
+    .main__title {
+        font-size: 28px;
+        margin-bottom: 10px;
+        line-height: 20px;
+    }
+
+    .main__item {
+        max-height: 150px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .main__item-information {
+        padding: 10px 10px;
+    }
+
+    .main__item-title {
+        margin-bottom: 10px;
+    }
+
+    .main__item-title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .main__item-descr {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .main__item {
+        min-width: 100px;
+    }
+
+    .main__item-img {
+        max-width: 120px;
+    }
+}
